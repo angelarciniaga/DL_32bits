@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="text-center">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">{{titulo}}</h1>
+            <p class="lead">{{subtitulo}}</p>
+        </div>
+    </div>
   </div>
+    
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  computed: {
+    ...mapGetters(['titulo','subtitulo'])
+  },
 }
 </script>
