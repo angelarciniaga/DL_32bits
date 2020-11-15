@@ -1,11 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <TotalProductos/>
+    <ListaProductos/>
   </div>
 </template>
 
 <script>
+import ListaProductos from '../components/ListaProductos.vue';
+import TotalProductos from '../components/TotalProductos.vue';
+
 export default {
-  name: 'Busqueda'
+  name: 'Busqueda',
+  components: { 
+    ListaProductos,
+    TotalProductos
+  }
 }
 </script>

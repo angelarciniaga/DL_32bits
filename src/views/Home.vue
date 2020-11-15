@@ -1,22 +1,16 @@
 <template>
   <div class="text-center">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-4">{{titulo}}</h1>
-            <p class="lead">{{subtitulo}}</p>
-        </div>
-    </div>
+    <Jumbotron />
   </div>
-    
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import Jumbotron from '../components/Jumbotron.vue';
 
 export default {
   name: 'Home',
-  computed: {
-    ...mapGetters(['titulo','subtitulo'])
-  },
+  components: {
+    Jumbotron,
+  }
 }
 </script>
