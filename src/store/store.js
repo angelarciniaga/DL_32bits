@@ -23,8 +23,11 @@ export default new Vuex.Store({
     subtitulo(state){
       return state.msg2;
     },
+    buscarCodigo: (state) => (codigo) => {
+      return state.datosProductos.filter(producto => producto.codigo == codigo)
+    },
     stokProductos(state){
-      return state.datosProductos.filter(juegos => juegos.stok > 0)
+      return state.datosProductos.filter(productos => productos.stock > 0)
     },
     totalProductos(state){
       return state.datosProductos.length;
