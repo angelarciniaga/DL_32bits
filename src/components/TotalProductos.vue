@@ -10,17 +10,14 @@
                 </blockquote>
             </div>
         </div>
-        <hr>
         <div class="card text-center mt-5">
             <div class="card-header">
                 FILTRO
             </div>
             <div class="card-body">
-                <input type="text" v-model="busqueda">
+                <input type="text" class="text-center" v-model="busqueda">
                 <blockquote class="blockquote mb-0">
-                <footer class="blockquote"><cite title="Source Title" v-for="(producto, item) in busqueda" :key="item"><label v-text="producto.nombre"></label></cite>
-                
-                </footer>
+                <footer class="blockquote"><cite title="Source Title" v-for="(producto, codigo) in buscarCodigo" :key="codigo">{{producto.nombre}}</cite></footer>
                 </blockquote>
             </div>
         </div>
