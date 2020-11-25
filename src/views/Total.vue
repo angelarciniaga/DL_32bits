@@ -1,12 +1,17 @@
 <template>
-    <div>
-
+    <div class="container">
+        <TotalVentas />
     </div>
 </template>
 
 <script>
+import TotalVentas from '../components/TotalVentas.vue'
+
 export default {
-    name: 'Total'
+    name: 'Total',
+    components: {
+        TotalVentas
+    }
 }
 </script>
 

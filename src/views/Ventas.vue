@@ -1,18 +1,17 @@
 <template>
     <div class='container'>
-        
-        <ProductosStock />
+        <VentaJuegos />
     </div>
 </template>
 
 <script>
-import ProductosStock from '../components/ProductosStock.vue';
+import VentaJuegos from '../components/VentaJuegos.vue';
 
 export default {
+    name: 'Ventas',
     components: {
-        ProductosStock 
+        VentaJuegos
     },
-    name: 'Ventas'
 }
 </script>
 

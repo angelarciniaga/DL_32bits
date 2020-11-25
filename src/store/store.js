@@ -1,5 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import Swal from 'sweetalert2'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,7 @@ export default new Vuex.Store({
       {codigo: '0006', nombre: 'Forza Horizon 4', stock: 100, precio: 20000, color: 'red', destacado: true}
     ],
     msg1: '32 Bits',
-    msg2: 'Juegos de PC y consolas'
+    msg2: 'Juegos de PC y consolas',
   },
   getters: {
     titulo(state){
@@ -26,18 +27,47 @@ export default new Vuex.Store({
     buscarCodigo: (state) => (codigo) => {
       return state.datosProductos.filter(producto => producto.codigo == codigo)
     },
-    stokProductos(state){
+    stockProductos(state){
       return state.datosProductos.filter(productos => productos.stock > 0)
     },
-    totalProductos(state){
-      return state.datosProductos.length;
+    totalProductos(state, getters){
+      return getters.stockProductos.length;
     },
     listaProductos(state){
       return state.datosProductos
     },
+    ventasTotales(state){
+      return state.datosProductos.reduce((acumulador, valor) => {
+        return acumulador + (valor.precio*valor.stock);
+      },0);
+    },
+    ventasRegistrada(state){
+      return state.datosProductos.reduce((acumulador, valor) => {
+        return acumulador + valor.stock;
+      },0);
+    }
   },
   mutations: {
+    decreStock(state, index){
+      if (state.datosProductos[index].stock > 0) {
+        state.datosProductos[index].stock--;
+        
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '¡Producto sin Stock!',
+          footer: `Te invitamos a Comprar nuestro juego del mes ${state.datosProductos[1].nombre}`
+        })
+      }
+      if (state.datosProductos[index].stock == 0) {
+        state.datosProductos[index].disponible = false;
+      }
+    },
   },
   actions: {
+    decrementaStock(context, index){
+      context.commit('decreStock', index);
+    }
   }
 })

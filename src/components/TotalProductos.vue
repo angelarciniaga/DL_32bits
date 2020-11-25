@@ -17,7 +17,7 @@
             <div class="card-body">
                 <input type="text" class="text-center" v-model="busqueda">
                 <blockquote class="blockquote mb-0">
-                <footer class="blockquote"><cite title="Source Title" v-for="(producto, codigo) in buscarCodigo" :key="codigo">{{producto.nombre}}</cite></footer>
+                <footer class="blockquote"><cite title="Source Title" v-for="(producto, codigo) in buscarCodigo" :key="codigo">Nombre: {{producto.nombre}}</cite></footer>
                 </blockquote>
             </div>
         </div>

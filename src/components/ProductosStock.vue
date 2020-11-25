@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                <footer class="blockquote">Total: <cite title="Source Title">{{stokProductos.length}}</cite></footer>
+                <footer class="blockquote">Total: <cite title="Source Title">{{totalProductos}}</cite></footer>
                 </blockquote>
             </div>
         </div>
@@ -14,11 +14,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
+
 export default {
     name: 'ProductosStock',
     computed: {
-        ...mapGetters(['stokProductos'])
+        ...mapGetters(['totalProductos'])
     },
 }
 </script>
