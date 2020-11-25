@@ -1,16 +1,10 @@
 <template>
-    <div>
-        <header class="masthead" style="background-image: url('/assets/img/chevrolet-blazer.jpg');">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto">
-                        <div class="post-heading">
-                            <h1><strong>La página que busca no existe</strong></h1>
-                        </div>
-                    </div>
-                </div>
+    <div class="text-center">
+        <div class="container jumbotron mt-5 jumbotron-fluid">
+            <div class="container text-center">
+                <h1 class="display-4">La página que busca no existe</h1>
+                <p class="lead">Intenta otra ruta</p>
             </div>
-        </header>
+        </div>
     </div>
 </template>

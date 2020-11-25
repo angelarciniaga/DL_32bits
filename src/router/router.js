@@ -24,6 +24,11 @@ const routes = [
     path: '/Total',
     name: 'Total',
     component: () => import('../views/Total.vue')
+  },
+  {
+    path: '*/',
+    name: 'Vista404',
+    component: () => import('../views/Vista404.vue')
   }
 ]
 
